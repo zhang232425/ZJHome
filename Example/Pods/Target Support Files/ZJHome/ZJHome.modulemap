@@ -1,0 +1,6 @@
+framework module ZJHome {
+  umbrella header "ZJHome-umbrella.h"
+
+  export *
+  module * { export * }
+}

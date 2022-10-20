@@ -1,0 +1,153 @@
+PODS:
+  - Action (5.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - Alamofire (5.6.2)
+  - DeviceKit (4.7.0)
+  - HandyJSON (5.0.2)
+  - KeychainSwift (20.0.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
+  - RTRootNavigationController (0.8.0):
+    - RTRootNavigationController/Core (= 0.8.0)
+  - RTRootNavigationController/Core (0.8.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SnapKit (5.6.0)
+  - SwiftyJSON (5.0.1)
+  - Then (3.0.0)
+  - ZJBase (0.1.0):
+    - RTRootNavigationController
+    - ZJExtension
+  - ZJDevice (0.1.0):
+    - DeviceKit
+    - ZJKeychain
+  - ZJExtension (0.1.0)
+  - ZJHome (0.1.0):
+    - Action
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+    - Then
+    - ZJBase
+    - ZJExtension
+    - ZJLocalizable
+    - ZJRequest
+    - ZJRoutableTargets
+    - ZJRouter
+    - ZJValidator
+  - ZJKeychain (0.1.0):
+    - KeychainSwift
+  - ZJLocalizable (0.1.0)
+  - ZJRegion (0.1.0)
+  - ZJRequest (0.1.0):
+    - ZJRequest/Core (= 0.1.0)
+    - ZJRequest/RxSwift (= 0.1.0)
+  - ZJRequest/Core (0.1.0):
+    - HandyJSON
+    - Moya
+    - SwiftyJSON
+    - ZJDevice
+    - ZJLocalizable
+    - ZJRegion
+  - ZJRequest/RxSwift (0.1.0):
+    - Moya/RxSwift
+    - ZJRequest/Core
+  - ZJRoutableTargets (0.1.0):
+    - ZJRouter
+  - ZJRouter (0.1.0)
+  - ZJValidator (0.1.0):
+    - ZJLocalizable
+
+DEPENDENCIES:
+  - "ZJBase (from `git@github.com:zhang232425/ZJBase.git`, branch `main`)"
+  - "ZJExtension (from `git@github.com:zhang232425/ZJExtension.git`, branch `main`)"
+  - ZJHome (from `../`)
+  - "ZJRoutableTargets (from `git@github.com:zhang232425/ZJRoutableTargets.git`, branch `main`)"
+
+SPEC REPOS:
+  "git@github.com:zhang232425/ZJSpecs.git":
+    - ZJDevice
+    - ZJKeychain
+    - ZJLocalizable
+    - ZJRegion
+    - ZJRequest
+    - ZJRouter
+    - ZJValidator
+  https://github.com/CocoaPods/Specs.git:
+    - Action
+    - Alamofire
+    - DeviceKit
+    - HandyJSON
+    - KeychainSwift
+    - Moya
+    - RTRootNavigationController
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftyJSON
+    - Then
+
+EXTERNAL SOURCES:
+  ZJBase:
+    :branch: main
+    :git: "git@github.com:zhang232425/ZJBase.git"
+  ZJExtension:
+    :branch: main
+    :git: "git@github.com:zhang232425/ZJExtension.git"
+  ZJHome:
+    :path: "../"
+  ZJRoutableTargets:
+    :branch: main
+    :git: "git@github.com:zhang232425/ZJRoutableTargets.git"
+
+CHECKOUT OPTIONS:
+  ZJBase:
+    :commit: 329656def2f609e6e892bf00919f196ec062ad1f
+    :git: "git@github.com:zhang232425/ZJBase.git"
+  ZJExtension:
+    :commit: b2e632dcc571e7e01df08ac0acdd96abe809a1c9
+    :git: "git@github.com:zhang232425/ZJExtension.git"
+  ZJRoutableTargets:
+    :commit: 131fb3f5ac990e39e8b84c4699b5abc32d139158
+    :git: "git@github.com:zhang232425/ZJRoutableTargets.git"
+
+SPEC CHECKSUMS:
+  Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  DeviceKit: c870c34f7c0e0ac4caa6f052e6efe7ef1472c5a1
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  RTRootNavigationController: 36c6301870f0467f89d69f4286795340b537d473
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  ZJBase: a38dc134dca5ad2c40768bd37300e971c35f6214
+  ZJDevice: bfc36b209a264aa5b877a733c6a7cffa856038db
+  ZJExtension: 6e48c70d2ef42959bbfd257a98bc8b2e96fe6c12
+  ZJHome: 3b32fc927a69b480f07c2cadfd5ae1a811a3195e
+  ZJKeychain: 056dd2cf24a6d44cb41677290742fe46cac94d39
+  ZJLocalizable: 3c925ba648064d1da4ddc70c29335d4029fc0445
+  ZJRegion: e077f30a1ebf32398f2e9af9380a7fe1ab4ffc61
+  ZJRequest: cbca3f9b01504851babe3d409121abe1e9560f1b
+  ZJRoutableTargets: 617c378cddd85417abfe361d7234aabf58761cd5
+  ZJRouter: 2ae914db45b7844d11cb186d4de4dff75a5085b9
+  ZJValidator: f1f4767a1a433ca41d2f33e0207172aa48afe58e
+
+PODFILE CHECKSUM: d0c270c0d215e3f340121b6612137c6219365902
+
+COCOAPODS: 1.11.2
