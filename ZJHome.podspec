@@ -16,16 +16,20 @@ Pod::Spec.new do |s|
   s.author           = { 'zhang232425' => '519301084@qq.com' }
   s.source           = { :git => 'https://github.com/zhang232425/ZJHome.git', :tag => s.version.to_s }
   s.ios.deployment_target = '10.0'
+  
   s.source_files = 'ZJHome/Classes/**/*'
+  
   s.resource_bundles = {
-      'ZJHome' => ['ZJHome/Assets/**/*']
+    'ZJHome' => ['ZJHome/Assets/**/*']
   }
+  
   s.static_framework = true
   
   s.dependency 'Then'
   s.dependency 'Action'
   s.dependency 'RxCocoa'
   s.dependency 'RxSwift'
+  s.dependency 'RxSwiftExt'
   s.dependency 'SnapKit'
   
   s.dependency 'ZJRequest'
@@ -35,6 +39,7 @@ Pod::Spec.new do |s|
   s.dependency 'ZJBase'
   s.dependency 'ZJExtension'
   s.dependency 'ZJValidator'
+  s.dependency 'ZJHUD'
   
   
 end

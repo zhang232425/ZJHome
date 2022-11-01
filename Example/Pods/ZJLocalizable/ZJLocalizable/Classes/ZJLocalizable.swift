@@ -8,9 +8,9 @@
 import Foundation
 
 public enum ZJLocalizedCode: String, CaseIterable {
-    /// 英语
+    // 英语
     case en
-    /// 印尼
+    // 印尼语
     case id
 }
 
@@ -32,12 +32,12 @@ public extension ZJLocalizable {
         
         let defaultValue = "Unlocalized String"
         
-        var languageBundle = bundle.path(forResource: language, ofType: "lpro").flatMap(Bundle.init)
+        var languageBundle = bundle.path(forResource: language, ofType: "lproj").flatMap(Bundle.init)
         
         if let str = languageBundle?.localizedString(forKey: key, value: defaultValue, table: table), !str.isEmpty {
             return str
         }
-                      
+        
         let bundleName = bundle.infoDictionary?[kCFBundleNameKey as String] as? String
         
         languageBundle = bundle.path(forResource: bundleName, ofType: "bundle").flatMap(Bundle.init)
@@ -45,7 +45,7 @@ public extension ZJLocalizable {
         languageBundle = languageBundle?.path(forResource: language, ofType: "lproj").flatMap(Bundle.init)
         
         return languageBundle?.localizedString(forKey: key, value: defaultValue, table: table) ?? ""
-                                                                                        
+        
     }
     
     func localized(arguments: String...) -> String {
@@ -53,4 +53,3 @@ public extension ZJLocalizable {
     }
     
 }
-

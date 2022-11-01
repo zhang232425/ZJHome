@@ -1,0 +1,10 @@
+/* 
+  Locale.strings
+  Pods
+
+  Created by Jercan on 2022/11/1.
+  
+*/
+
+"welcome" = "Welcome to OneAset";
+"login" = "Login";

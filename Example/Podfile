@@ -3,6 +3,7 @@ platform :ios, '10.0'
 
 source 'git@github.com:zhang232425/ZJSpecs.git'
 source 'https://github.com/CocoaPods/Specs.git'
+install! 'cocoapods', :deterministic_uuids => false
 
 target 'ZJHome_Example' do
   

@@ -37,6 +37,9 @@
     "RxSwift": [
 
     ],
+    "RxSwiftExt": [
+
+    ],
     "SnapKit": [
 
     ],
@@ -59,6 +62,9 @@
 
     ],
     "ZJValidator": [
+
+    ],
+    "ZJHUD": [
 
     ]
   }

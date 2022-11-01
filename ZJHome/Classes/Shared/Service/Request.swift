@@ -16,11 +16,11 @@ struct Request {}
 extension Request {
     
     /// 首页布局
-    static func homeLayout() -> Single<Bool> {
+    static func homeLayout() -> Single<HomeLayoutModel> {
         HomeAPI.homeLayout.rx.request()
             .ensureResponseStatus()
-            .mapObject(ZJRequestResult<Bool>.self)
-            .map { $0.success }
+            .mapObject(ZJRequestResult<HomeLayoutModel>.self)
+            .map { $0.data ?? .init() }
     }
     
 }

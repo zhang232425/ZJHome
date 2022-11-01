@@ -13,33 +13,49 @@ class HomeViewController: BaseViewController {
     private let viewModel = HomeViewModel()
     
     // MARK: - Lazy Load
-    private lazy var testBtn = UIButton(type: .system).then {
-        $0.setTitle("Test", for: .normal)
-        $0.addTarget(self, action: #selector(testClick), for: .touchUpInside)
+    private lazy var navBarView = HomeNavigationBarView()
+    
+    private lazy var topBgView = UIImageView().then {
+        $0.image = UIImage.dd.named("home_top_two")
     }
+    
+    private lazy var scrollView = HomeScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        config()
         setupViews()
         bindViewModel()
+        //viewModel.requestLayout()
     }
 
 }
 
 private extension HomeViewController {
     
+    func config() {
+        view.backgroundColor = UIColor.backgroundColor
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     func setupViews() {
         
-        testBtn.add(to: view).snp.makeConstraints {
-            $0.center.equalToSuperview()
+        navBarView.add(to: view).snp.makeConstraints {
+            $0.top.left.right.equalToSuperview()
+        }
+        
+        topBgView.add(to: view).snp.makeConstraints {
+            $0.top.equalTo(navBarView.snp.bottom)
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(116.auto)
         }
         
     }
     
     func bindViewModel() {
         
-        viewModel.homeLayoutAction.elements.subscribe(onNext: {
-            print("首页布局 ------ \($0)")
+        viewModel.homeLayoutModel.subscribe(onNext: {
+            print($0.sections)
         }).disposed(by: disposeBag)
         
     }
@@ -48,10 +64,6 @@ private extension HomeViewController {
 
 private extension HomeViewController {
     
-    @objc func testClick() {
-        
-        viewModel.homeLayoutAction.execute()
-        
-    }
+    
     
 }

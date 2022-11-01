@@ -3,7 +3,7 @@ PODS:
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
   - Alamofire (5.6.2)
-  - DeviceKit (4.7.0)
+  - DeviceKit (4.8.0)
   - HandyJSON (5.0.2)
   - KeychainSwift (20.0.0)
   - Moya (15.0.0):
@@ -13,6 +13,9 @@ PODS:
   - Moya/RxSwift (15.0.0):
     - Moya/Core
     - RxSwift (~> 6.0)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - RTRootNavigationController (0.8.0):
     - RTRootNavigationController/Core (= 0.8.0)
   - RTRootNavigationController/Core (0.8.0)
@@ -22,6 +25,14 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - RxSwiftExt (6.0.1):
+    - RxSwiftExt/Core (= 6.0.1)
+    - RxSwiftExt/RxCocoa (= 6.0.1)
+  - RxSwiftExt/Core (6.0.1):
+    - RxSwift (~> 6.0)
+  - RxSwiftExt/RxCocoa (6.0.1):
+    - RxCocoa (~> 6.0)
+    - RxSwiftExt/Core
   - SnapKit (5.6.0)
   - SwiftyJSON (5.0.1)
   - Then (3.0.0)
@@ -36,15 +47,21 @@ PODS:
     - Action
     - RxCocoa
     - RxSwift
+    - RxSwiftExt
     - SnapKit
     - Then
     - ZJBase
     - ZJExtension
+    - ZJHUD
     - ZJLocalizable
     - ZJRequest
     - ZJRoutableTargets
     - ZJRouter
     - ZJValidator
+  - ZJHUD (0.1.0):
+    - NVActivityIndicatorView
+    - SnapKit
+    - ZJExtension
   - ZJKeychain (0.1.0):
     - KeychainSwift
   - ZJLocalizable (0.1.0)
@@ -77,6 +94,7 @@ DEPENDENCIES:
 SPEC REPOS:
   "git@github.com:zhang232425/ZJSpecs.git":
     - ZJDevice
+    - ZJHUD
     - ZJKeychain
     - ZJLocalizable
     - ZJRegion
@@ -90,10 +108,12 @@ SPEC REPOS:
     - HandyJSON
     - KeychainSwift
     - Moya
+    - NVActivityIndicatorView
     - RTRootNavigationController
     - RxCocoa
     - RxRelay
     - RxSwift
+    - RxSwiftExt
     - SnapKit
     - SwiftyJSON
     - Then
@@ -116,7 +136,7 @@ CHECKOUT OPTIONS:
     :commit: 329656def2f609e6e892bf00919f196ec062ad1f
     :git: "git@github.com:zhang232425/ZJBase.git"
   ZJExtension:
-    :commit: b2e632dcc571e7e01df08ac0acdd96abe809a1c9
+    :commit: f9df0f1b2d455c918db30819726fcf51ad54cb74
     :git: "git@github.com:zhang232425/ZJExtension.git"
   ZJRoutableTargets:
     :commit: 131fb3f5ac990e39e8b84c4699b5abc32d139158
@@ -125,21 +145,24 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
-  DeviceKit: c870c34f7c0e0ac4caa6f052e6efe7ef1472c5a1
+  DeviceKit: e787680f500d6ce642b24204aa7a5f9bc9ea1209
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   RTRootNavigationController: 36c6301870f0467f89d69f4286795340b537d473
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   ZJBase: a38dc134dca5ad2c40768bd37300e971c35f6214
   ZJDevice: bfc36b209a264aa5b877a733c6a7cffa856038db
   ZJExtension: 6e48c70d2ef42959bbfd257a98bc8b2e96fe6c12
-  ZJHome: 3b32fc927a69b480f07c2cadfd5ae1a811a3195e
+  ZJHome: 8524406001f5590cdf241933b2c4f16eda28c71c
+  ZJHUD: d5ca2144a62af4331f7f58386f5e4fbc5f5b2d01
   ZJKeychain: 056dd2cf24a6d44cb41677290742fe46cac94d39
   ZJLocalizable: 3c925ba648064d1da4ddc70c29335d4029fc0445
   ZJRegion: e077f30a1ebf32398f2e9af9380a7fe1ab4ffc61
@@ -148,6 +171,6 @@ SPEC CHECKSUMS:
   ZJRouter: 2ae914db45b7844d11cb186d4de4dff75a5085b9
   ZJValidator: f1f4767a1a433ca41d2f33e0207172aa48afe58e
 
-PODFILE CHECKSUM: d0c270c0d215e3f340121b6612137c6219365902
+PODFILE CHECKSUM: 18add9258cd27ecc1259da00fbfc37c834559ff9
 
 COCOAPODS: 1.11.2
