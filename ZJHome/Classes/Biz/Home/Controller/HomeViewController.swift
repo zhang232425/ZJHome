@@ -13,20 +13,19 @@ class HomeViewController: BaseViewController {
     private let viewModel = HomeViewModel()
     
     // MARK: - Lazy Load
-    private lazy var navBarView = HomeNavigationBarView()
+    private lazy var titleView = HomeNavigationBarView()
     
-    private lazy var topBgView = UIImageView().then {
-        $0.image = UIImage.dd.named("home_top_two")
+    private lazy var scrollView = HomeScrollView().then {
+        $0.alwaysBounceVertical = true
+        $0.refreshClick = { [weak self] in self?.viewModel.requestLayout() }
     }
-    
-    private lazy var scrollView = HomeScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
         setupViews()
         bindViewModel()
-        //viewModel.requestLayout()
+        viewModel.requestLayout()
     }
 
 }
@@ -34,29 +33,31 @@ class HomeViewController: BaseViewController {
 private extension HomeViewController {
     
     func config() {
-        view.backgroundColor = UIColor.backgroundColor
+        view.backgroundColor = .white
         navigationController?.isNavigationBarHidden = true
     }
     
     func setupViews() {
         
-        navBarView.add(to: view).snp.makeConstraints {
+        titleView.add(to: view).snp.makeConstraints {
             $0.top.left.right.equalToSuperview()
         }
         
-        topBgView.add(to: view).snp.makeConstraints {
-            $0.top.equalTo(navBarView.snp.bottom)
-            $0.left.right.equalToSuperview()
-            $0.height.equalTo(116.auto)
+        scrollView.add(to: view).snp.makeConstraints {
+            $0.top.equalTo(titleView.snp.bottom)
+            $0.left.bottom.right.equalToSuperview()
         }
         
     }
     
     func bindViewModel() {
         
-        viewModel.homeLayoutModel.subscribe(onNext: {
-            print($0.sections)
+        viewModel.homeLayoutModel.subscribe(onNext: { [weak self] model in
+            self?.scrollView.setState(.layout(model.sections))
         }).disposed(by: disposeBag)
+        
+        
+        
         
     }
     

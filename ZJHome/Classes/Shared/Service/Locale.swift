@@ -11,6 +11,8 @@ import ZJLocalizable
 enum Locale: String {
     case welcome
     case login
+    case noSignal
+    case refresh
 }
 
 extension Locale: ZJLocalizable {

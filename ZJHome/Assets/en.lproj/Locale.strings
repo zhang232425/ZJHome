@@ -8,3 +8,6 @@
 
 "welcome" = "Welcome to OneAset";
 "login" = "Login";
+
+"noSignal" = "No signal yet";
+"refresh" = "Refresh";

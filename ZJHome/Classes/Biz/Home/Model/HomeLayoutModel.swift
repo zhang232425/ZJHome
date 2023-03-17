@@ -21,8 +21,8 @@ struct HomeLayoutModel: HandyJSON {
             case banner     = "BA"
             case finance    = "CA"
             case disclosure = "MA"
-            case footerOjk  = "TB"
-            case realGold   = "GH"
+//            case footerOjk  = "TB"
+//            case realGold   = "GH"
         }
         
         /// 类型
