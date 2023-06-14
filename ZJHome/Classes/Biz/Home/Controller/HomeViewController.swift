@@ -52,19 +52,16 @@ private extension HomeViewController {
     
     func bindViewModel() {
         
+        viewModel.layoutExecuting.subscribe(onNext: { [weak self] _ in
+            self?.scrollView.setState(.loading)
+        }).disposed(by: disposeBag)
+        
         viewModel.homeLayoutModel.subscribe(onNext: { [weak self] model in
             self?.scrollView.setState(.layout(model.sections))
         }).disposed(by: disposeBag)
-        
-        
-        
         
     }
     
 }
 
-private extension HomeViewController {
-    
-    
-    
-}
+

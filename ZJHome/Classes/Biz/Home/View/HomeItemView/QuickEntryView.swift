@@ -60,7 +60,6 @@ fileprivate class ItemView: UIView {
     // MARK: - Lazy Load
     private(set) lazy var imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
-        $0.backgroundColor = UIColor(hexString: "#FFE3CC")
     }
     
     private(set) lazy var label = UILabel().then {
@@ -68,7 +67,6 @@ fileprivate class ItemView: UIView {
         $0.font = UIFont.medium14
         $0.textAlignment = .center
         $0.numberOfLines = 2
-        $0.text = "张大春"
     }
     
     // MARK: - Init Method

@@ -24,6 +24,8 @@ final class HomeViewModel {
 
 final class HomeViewModel {
     
+    private var layoutModel: HomeLayoutModel?
+    
     private var layoutAction: Action<(), HomeLayoutModel>!
     
     init() {
@@ -59,5 +61,10 @@ extension HomeViewModel {
     
     var homeLayoutModel: Observable<HomeLayoutModel> { layoutAction.elements.share(replay: 1) }
     var homeLayoutError: Observable<Error> { layoutAction.underlyingError }
+    var layoutExecuting: Observable<Bool> {
+        layoutAction.executing.map { [weak self] in $0 && (self?.layoutModel == nil) }
+            .filter { $0 == true }
+    }
     
 }
+
