@@ -9,7 +9,40 @@ import Foundation
 
 extension HomeScrollView {
     
+    func update(type: HomeItemType, model: HomeModelProtocol) {
+        
+        switch type {
+        case .quickEntry:
+            if let v: QuickEntryView = findSubview() {
+                if let m = model as? HomeItemState<[HomeLayoutModel.QuickEntryModel]> {
+                    v.refresh(with: m)
+                } else if case AnyHomeItemState.empty = model {
+                    v.refreshWithEmptyState()
+                }
+            }
+        case .guideProgress:
+            break
+        case .noviceProducts:
+            break
+        case .recommendProducts:
+            break
+        case .banner:
+            break
+        case .finance:
+            break
+        case .infoDisclosure, .brandLogo:
+            break
+        }
+        
+    }
     
+}
+
+private extension HomeScrollView {
+    
+    func findSubview<V: UIView>() -> V? {
+        return stackView.arrangedSubviews.filter { $0 is V }.first as? V
+    }
     
 }
 
@@ -20,7 +53,7 @@ extension HomeItemType {
         case .quickEntry:
             return QuickEntryView.self
         case .guideProgress:
-            return QuickEntryView.self
+            return ProcessGuidingView.self
         case .noviceProducts:
             return QuickEntryView.self
         case .recommendProducts:

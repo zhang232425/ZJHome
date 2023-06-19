@@ -7,6 +7,24 @@
 
 import Foundation
 
+protocol HomeModelProtocol {}
+
+enum HomeItemState<T>: HomeModelProtocol {
+    
+    case loading
+    
+    case data(T)
+    
+    case empty
+    
+    init(data: T) {
+        self = .data(data)
+    }
+    
+}
+
+typealias AnyHomeItemState = HomeItemState<Any>
+
 enum HomeItemType {
     
     /// 快捷入口
@@ -34,4 +52,3 @@ enum HomeItemType {
     case brandLogo
     
 }
-

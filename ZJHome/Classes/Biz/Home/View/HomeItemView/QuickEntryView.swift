@@ -49,13 +49,72 @@ private extension QuickEntryView {
         
         for _ in 0 ..< 3 {
             let itemView = ItemView()
+            itemView.imageView.backgroundColor = .init(hexString: "#FFE3CC")
             stackView.addArrangedSubview(itemView)
         }
     }
     
+    func setLoadingState() {
+        
+        stackView.arrangedSubviews.forEach {
+            stackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+        
+        for _ in 0 ..< 3 {
+            let itemView = ItemView()
+            itemView.imageView.backgroundColor = .init(hexString: "#FFE3CC")
+            stackView.addArrangedSubview(itemView)
+        }
+    }
+    
+    func refresh(with models: [HomeLayoutModel.QuickEntryModel]) {
+        
+        stackView.clearArrangedSubviews()
+        
+        for model in models {
+            let itemView = ItemView().then {
+                $0.imageView.setImageWith(url: model.iconImgUrl, placeholderImage: nil)
+                $0.label.text = model.title
+                $0.model = model
+            }
+            stackView.addArrangedSubview(itemView)
+        }
+        
+//        stackView.separatorColor = (models.count == 2) ? UIColor(hexString: "#F7DAC0") : nil
+        
+    }
+    
+}
+
+extension QuickEntryView: HomeRefreshableItemView {
+    
+    func refresh(with state: HomeItemState<[HomeLayoutModel.QuickEntryModel]>) {
+        switch state {
+        case .loading:
+            refreshWithLoadingState()
+        case .data(let list):
+            refresh(with: list)
+        case .empty:
+            refreshWithEmptyState()
+        }
+    }
+    
+    func refreshWithLoadingState() {
+        setLoadingState()
+    }
+    
+    func refreshWithEmptyState() {
+//        let userInfo = [HomePopoverUtil.Notifications.Key.view: self]
+//        NotificationCenter.default.post(name: HomePopoverUtil.Notifications.quickEntry.name, object: false, userInfo: userInfo)
+    }
+    
+    
 }
 
 fileprivate class ItemView: UIView {
+    
+    var model: HomeLayoutModel.QuickEntryModel?
     
     // MARK: - Lazy Load
     private(set) lazy var imageView = UIImageView().then {
@@ -104,7 +163,7 @@ private extension ItemView {
     }
     
     @objc func itemClick() {
-        
+        print("点击了item ------------")
     }
     
 }

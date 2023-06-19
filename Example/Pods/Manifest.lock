@@ -2,8 +2,9 @@ PODS:
   - Action (5.0.0):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
-  - Alamofire (5.6.2)
-  - DeviceKit (4.8.0)
+  - Alamofire (5.7.1)
+  - CryptoSwift (1.5.1)
+  - DeviceKit (4.9.0)
   - HandyJSON (5.0.2)
   - KeychainSwift (20.0.0)
   - Moya (15.0.0):
@@ -33,6 +34,9 @@ PODS:
   - RxSwiftExt/RxCocoa (6.0.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
+  - SDWebImage (5.16.0):
+    - SDWebImage/Core (= 5.16.0)
+  - SDWebImage/Core (5.16.0)
   - SnapKit (5.6.0)
   - SwiftyJSON (5.0.1)
   - Then (3.0.0)
@@ -42,7 +46,9 @@ PODS:
   - ZJDevice (0.1.0):
     - DeviceKit
     - ZJKeychain
-  - ZJExtension (0.1.0)
+  - ZJExtension (0.1.0):
+    - CryptoSwift
+    - SDWebImage
   - ZJHome (0.1.0):
     - Action
     - RxCocoa
@@ -104,6 +110,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Action
     - Alamofire
+    - CryptoSwift
     - DeviceKit
     - HandyJSON
     - KeychainSwift
@@ -114,6 +121,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxSwiftExt
+    - SDWebImage
     - SnapKit
     - SwiftyJSON
     - Then
@@ -136,7 +144,7 @@ CHECKOUT OPTIONS:
     :commit: 329656def2f609e6e892bf00919f196ec062ad1f
     :git: "git@github.com:zhang232425/ZJBase.git"
   ZJExtension:
-    :commit: f9df0f1b2d455c918db30819726fcf51ad54cb74
+    :commit: 35fbeb2875b17912fded6915b681b5b074cb9678
     :git: "git@github.com:zhang232425/ZJExtension.git"
   ZJRoutableTargets:
     :commit: 131fb3f5ac990e39e8b84c4699b5abc32d139158
@@ -144,8 +152,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Action: 47f1825511907b4fcd79dd7a7db9526c20f78018
-  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
-  DeviceKit: e787680f500d6ce642b24204aa7a5f9bc9ea1209
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
+  DeviceKit: 847709bf70b78fd9ab765bd571fb9f5f815c3fc1
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
@@ -155,12 +164,13 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
+  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   ZJBase: a38dc134dca5ad2c40768bd37300e971c35f6214
   ZJDevice: bfc36b209a264aa5b877a733c6a7cffa856038db
-  ZJExtension: 6e48c70d2ef42959bbfd257a98bc8b2e96fe6c12
+  ZJExtension: 696a53ccf69ba7171693e4c370d2672a62a4dfd9
   ZJHome: 8524406001f5590cdf241933b2c4f16eda28c71c
   ZJHUD: d5ca2144a62af4331f7f58386f5e4fbc5f5b2d01
   ZJKeychain: 056dd2cf24a6d44cb41677290742fe46cac94d39

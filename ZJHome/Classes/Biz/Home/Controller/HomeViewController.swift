@@ -60,8 +60,15 @@ private extension HomeViewController {
             self?.scrollView.setState(.layout(model.sections))
         }).disposed(by: disposeBag)
         
+        viewModel.homeLayoutModel.subscribe(onNext: { [weak self] model in
+            let entries = HomeItemState(data: model.quickEntries)
+            self?.scrollView.update(type: .quickEntry, model: entries)
+        }).disposed(by: disposeBag)
+        
+        viewModel.layoutErrorWithNoData.subscribe(onNext: { [weak self] _ in
+            self?.scrollView.setState(.failure)
+        }).disposed(by: disposeBag)
+        
     }
     
 }
-
-

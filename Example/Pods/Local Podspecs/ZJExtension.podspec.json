@@ -22,5 +22,13 @@
     "ZJExtension": [
       "ZJExtension/Assets/*.png"
     ]
+  },
+  "dependencies": {
+    "SDWebImage": [
+
+    ],
+    "CryptoSwift": [
+
+    ]
   }
 }

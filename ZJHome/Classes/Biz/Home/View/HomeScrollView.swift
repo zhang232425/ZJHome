@@ -39,9 +39,10 @@ extension HomeScrollView {
         switch state {
         case .loading:
             setFailureState(false)
+            setupViews()
         case .layout(let sections):
             setFailureState(false)
-            setupViews(sections)
+            resetLayout(sections)
         case .failure:
             setFailureState(true)
         }
@@ -51,6 +52,35 @@ extension HomeScrollView {
 }
 
 private extension HomeScrollView {
+    
+    func setupViews() {
+        
+        func setupPlaceholderViews(heightUsed: CGFloat) {
+            let remainH = bounds.height - heightUsed
+            let count = Int(ceil(remainH / HomeItemPlaceholderView.defaultHeight))
+            for _ in 0 ..< count {
+                let view = HomeItemPlaceholderView()
+                stackView.addArrangedSubview(view)
+                view.snp.makeConstraints {
+                    $0.left.right.equalToSuperview()
+                }
+            }
+        }
+        
+        stackView.arrangedSubviews.forEach {
+//            stackView.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
+        
+        let sub = QuickEntryView()
+        appendSubview(sub)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+            setupPlaceholderViews(heightUsed: sub.bounds.height)
+        }
+        
+        
+    }
     
     func setFailureState(_ isFailed: Bool) {
         
@@ -70,7 +100,7 @@ private extension HomeScrollView {
         
     }
     
-    func setupViews(_ sections: [HomeLayoutModel.SectionModel]) {
+    func resetLayout(_ sections: [HomeLayoutModel.SectionModel]) {
         
         guard !sections.isEmpty else { return }
         

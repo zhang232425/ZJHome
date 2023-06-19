@@ -59,12 +59,59 @@ extension HomeViewModel {
 
 extension HomeViewModel {
     
+    private var hasNoData: Bool { (layoutModel?.sections ?? []).isEmpty }
+    
+    /// 发生错误时，还未请求到布局
+    var layoutErrorWithNoData: Observable<Error> {
+        homeLayoutError.filter { [weak self] _ in (self?.hasNoData ?? false)}
+    }
+    
     var homeLayoutModel: Observable<HomeLayoutModel> { layoutAction.elements.share(replay: 1) }
-    var homeLayoutError: Observable<Error> { layoutAction.underlyingError }
+    var homeLayoutError: Observable<Error> { layoutAction.underlyingError.map(LayoutError.parse) }
     var layoutExecuting: Observable<Bool> {
         layoutAction.executing.map { [weak self] in $0 && (self?.layoutModel == nil) }
             .filter { $0 == true }
     }
     
 }
+
+import Moya
+import Alamofire
+
+private enum LayoutError: LocalizedError {
+    
+    case networkError
+    case requestTimeOut
+    case requestFailed
+    
+    static func parse(error: Error) -> LayoutError {
+        if case MoyaError.underlying(let underlying, _) = error,
+           case AFError.sessionTaskFailed(let err) = underlying {
+            switch (err as NSError).code {
+            case NSURLErrorNotConnectedToInternet:
+                return .networkError
+            case NSURLErrorTimedOut:
+                return .requestTimeOut
+            default: break
+            }
+        }
+        return .requestFailed
+    }
+    
+    var errorDescription: String? {
+        switch self {
+        case .networkError:     return Locale.networkOffline.localized
+        case .requestTimeOut:   return Locale.requestTimedOut.localized
+        case .requestFailed:    return Locale.requestFailed.localized
+        }
+    }
+}
+
+
+
+
+
+ 
+
+ 
 

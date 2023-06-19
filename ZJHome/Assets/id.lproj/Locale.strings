@@ -6,6 +6,10 @@
   
 */
 
+"networkOffline" = "Koneksi internet tampaknya offline";
+"requestTimedOut" = "Minta Waktu Habis";
+"requestFailed" = "Permintaan gagal, silakan coba lagi";
+
 "welcome" = "Selamat Datang di OneAset";
 "login" = "Login";
 

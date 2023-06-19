@@ -9,6 +9,12 @@ import Foundation
 import ZJLocalizable
 
 enum Locale: String {
+    
+    // MARK: 通用
+    case networkOffline
+    case requestTimedOut
+    case requestFailed
+    
     case welcome
     case login
     case noSignal

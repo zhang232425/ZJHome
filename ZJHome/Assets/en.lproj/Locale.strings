@@ -6,6 +6,10 @@
   
 */
 
+"networkOffline" = "The Internet connection appears to be offline";
+"requestTimedOut" = "Request Timeout";
+"requestFailed" = "Request failed, please try again";
+
 "welcome" = "Welcome to OneAset";
 "login" = "Login";
 
