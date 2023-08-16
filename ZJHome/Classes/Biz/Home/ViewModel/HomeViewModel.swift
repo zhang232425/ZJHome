@@ -28,6 +28,8 @@ final class HomeViewModel {
     
     private var layoutAction: Action<(), HomeLayoutModel>!
     
+    private var guideAction: Action<(), [HomeGuidingModel]>!
+
     init() {
         setupActions()
         bindData()
@@ -72,6 +74,9 @@ extension HomeViewModel {
         layoutAction.executing.map { [weak self] in $0 && (self?.layoutModel == nil) }
             .filter { $0 == true }
     }
+    
+    
+    
     
 }
 

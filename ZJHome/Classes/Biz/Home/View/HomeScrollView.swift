@@ -68,7 +68,7 @@ private extension HomeScrollView {
         }
         
         stackView.arrangedSubviews.forEach {
-//            stackView.removeArrangedSubview($0)
+            stackView.removeArrangedSubview($0)
             $0.removeFromSuperview()
         }
         

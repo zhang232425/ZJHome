@@ -929,6 +929,7 @@
 		46EB2E0000A120 /* ZJLocalizable-ZJLocalizable in Resources */ = {isa = PBXBuildFile; fileRef = FD2B9CAB2A6596FC35F6B611E5F42FD6 /* ZJLocalizable-ZJLocalizable */; };
 		46EB2E0000A150 /* ZJRegion-ZJRegion in Resources */ = {isa = PBXBuildFile; fileRef = 61706C52A722C7072ECE7CDEB5156231 /* ZJRegion-ZJRegion */; };
 		46EB2E0000A2E0 /* ZJValidator-ZJValidator in Resources */ = {isa = PBXBuildFile; fileRef = FA08430103907551C394D3F177B69783 /* ZJValidator-ZJValidator */; };
+		D6F03C9C2A402C81001238AC /* HomeGuidingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F03C9B2A402C81001238AC /* HomeGuidingModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1516,7 +1517,7 @@
 		3654624AE312726F48C234464D70D427 /* ZJRoutableTargets-ZJRoutableTargets */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ZJRoutableTargets-ZJRoutableTargets"; path = ZJRoutableTargets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Moya; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D161F890E501321FECB2309ED30E77 /* ZJRouter */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJRouter; path = ZJRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46EB2E00000280 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		46EB2E00000280 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		46EB2E00000290 /* Action+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Action+Extensions.swift"; path = "Sources/Action/Action+Extensions.swift"; sourceTree = "<group>"; };
 		46EB2E000002A0 /* Action+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Action+Internal.swift"; path = "Sources/Action/Action+Internal.swift"; sourceTree = "<group>"; };
 		46EB2E000002B0 /* Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Action.swift; path = Sources/Action/Action.swift; sourceTree = "<group>"; };
@@ -2340,9 +2341,9 @@
 		46EB2E00003770 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ZJHome/Assets/Images.xcassets; sourceTree = "<group>"; };
 		46EB2E000037A0 /* RequestError.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = RequestError.strings; path = en.lproj/RequestError.strings; sourceTree = "<group>"; };
 		46EB2E000037B0 /* RequestError.strings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = RequestError.strings; path = id.lproj/RequestError.strings; sourceTree = "<group>"; };
-		46EB2E000037D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		46EB2E000037E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		46EB2E000037F0 /* ZJHome.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZJHome.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		46EB2E000037D0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		46EB2E000037E0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		46EB2E000037F0 /* ZJHome.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ZJHome.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		46EB2E000038A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		46EB2E00003950 /* Action.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Action.debug.xcconfig; sourceTree = "<group>"; };
 		46EB2E00003960 /* Action.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Action.release.xcconfig; sourceTree = "<group>"; };
@@ -2600,6 +2601,7 @@
 		CD54121DDA84872534168702B5F92950 /* HandyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HandyJSON; path = HandyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD63405120225602F8DF676BC778C745 /* ZJRequest-ZJRequest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ZJRequest-ZJRequest"; path = ZJRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28763E37EDD385B2F7D6DE39F447784 /* ZJLocalizable */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJLocalizable; path = ZJLocalizable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6F03C9B2A402C81001238AC /* HomeGuidingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGuidingModel.swift; sourceTree = "<group>"; };
 		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C5BC805E4D0610414D6D3C234F2DDB /* ZJRequest */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZJRequest; path = ZJRequest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95226AA422CFE0C926FE50940EDE3EB /* ZJHUD-ZJHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "ZJHUD-ZJHUD"; path = ZJHUD.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2872,13 +2874,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EB2E00008E40 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		46EB2E00008EE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2992,7 +2987,6 @@
 				61706C52A722C7072ECE7CDEB5156231 /* ZJRegion-ZJRegion */,
 				E7C5BC805E4D0610414D6D3C234F2DDB /* ZJRequest */,
 				CD63405120225602F8DF676BC778C745 /* ZJRequest-ZJRequest */,
-				CD63405120225602F8DF676BC778C745 /* ZJRequest-ZJRequest */,
 				83D3933541495BB76E2608616BBC4654 /* ZJRoutableTargets */,
 				3654624AE312726F48C234464D70D427 /* ZJRoutableTargets-ZJRoutableTargets */,
 				38D161F890E501321FECB2309ED30E77 /* ZJRouter */,
@@ -3075,7 +3069,6 @@
 				46EB2E00000300 /* UIRefreshControl+Action.swift */,
 				46EB2E00003940 /* Support Files */,
 			);
-			name = Action;
 			path = Action;
 			sourceTree = "<group>";
 		};
@@ -3121,7 +3114,6 @@
 				46EB2E00000550 /* Validation.swift */,
 				46EB2E00003CD0 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -3231,7 +3223,6 @@
 				46EB2E00000BA0 /* ZeroPadding.swift */,
 				46EB2E00004460 /* Support Files */,
 			);
-			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -3241,7 +3232,6 @@
 				46EB2E00000BB0 /* Device.generated.swift */,
 				46EB2E000045B0 /* Support Files */,
 			);
-			name = DeviceKit;
 			path = DeviceKit;
 			sourceTree = "<group>";
 		};
@@ -3286,7 +3276,6 @@
 				46EB2E00000DF0 /* URLTransform.swift */,
 				46EB2E00004930 /* Support Files */,
 			);
-			name = HandyJSON;
 			path = HandyJSON;
 			sourceTree = "<group>";
 		};
@@ -3298,7 +3287,6 @@
 				46EB2E00000E20 /* TegKeychainConstants.swift */,
 				46EB2E00004AA0 /* Support Files */,
 			);
-			name = KeychainSwift;
 			path = KeychainSwift;
 			sourceTree = "<group>";
 		};
@@ -3309,7 +3297,6 @@
 				46EB2E00000FC0 /* RxSwift */,
 				46EB2E00004D90 /* Support Files */,
 			);
-			name = Moya;
 			path = Moya;
 			sourceTree = "<group>";
 		};
@@ -3319,7 +3306,6 @@
 				46EB2E00001000 /* Base */,
 				46EB2E00005120 /* Support Files */,
 			);
-			name = NVActivityIndicatorView;
 			path = NVActivityIndicatorView;
 			sourceTree = "<group>";
 		};
@@ -3329,7 +3315,6 @@
 				46EB2E00001260 /* Core */,
 				46EB2E000052B0 /* Support Files */,
 			);
-			name = RTRootNavigationController;
 			path = RTRootNavigationController;
 			sourceTree = "<group>";
 		};
@@ -3448,7 +3433,6 @@
 				46EB2E000016D0 /* WKWebView+Rx.swift */,
 				46EB2E00005AD0 /* Support Files */,
 			);
-			name = RxCocoa;
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
@@ -3462,7 +3446,6 @@
 				46EB2E000019E0 /* Utils.swift */,
 				46EB2E00005C60 /* Support Files */,
 			);
-			name = RxRelay;
 			path = RxRelay;
 			sourceTree = "<group>";
 		};
@@ -3631,7 +3614,6 @@
 				46EB2E00002040 /* Zip+Collection.swift */,
 				46EB2E000067A0 /* Support Files */,
 			);
-			name = RxSwift;
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
@@ -3642,7 +3624,6 @@
 				46EB2E000025F0 /* RxCocoa */,
 				46EB2E00006B40 /* Support Files */,
 			);
-			name = RxSwiftExt;
 			path = RxSwiftExt;
 			sourceTree = "<group>";
 		};
@@ -3652,7 +3633,6 @@
 				46EB2E00002670 /* Core */,
 				46EB2E000075A0 /* Support Files */,
 			);
-			name = SDWebImage;
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
@@ -3698,7 +3678,6 @@
 				46EB2E000031E0 /* UILayoutSupport+Extensions.swift */,
 				46EB2E00007930 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -3708,7 +3687,6 @@
 				46EB2E000031F0 /* SwiftyJSON.swift */,
 				46EB2E00007A80 /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -3718,7 +3696,6 @@
 				46EB2E00003200 /* Then.swift */,
 				46EB2E00007BD0 /* Support Files */,
 			);
-			name = Then;
 			path = Then;
 			sourceTree = "<group>";
 		};
@@ -3730,7 +3707,6 @@
 				46EB2E00003220 /* ZJViewController.swift */,
 				46EB2E00007D90 /* Support Files */,
 			);
-			name = ZJBase;
 			path = ZJBase;
 			sourceTree = "<group>";
 		};
@@ -3740,7 +3716,6 @@
 				46EB2E00003240 /* ZJDevice.swift */,
 				46EB2E00007F90 /* Support Files */,
 			);
-			name = ZJDevice;
 			path = ZJDevice;
 			sourceTree = "<group>";
 		};
@@ -3758,7 +3733,6 @@
 				46EB2E000032D0 /* UIView+Extension.swift */,
 				46EB2E00008170 /* Support Files */,
 			);
-			name = ZJExtension;
 			path = ZJExtension;
 			sourceTree = "<group>";
 		};
@@ -3771,7 +3745,6 @@
 				46EB2E00003720 /* Resources */,
 				46EB2E000083E0 /* Support Files */,
 			);
-			name = ZJHUD;
 			path = ZJHUD;
 			sourceTree = "<group>";
 		};
@@ -3797,7 +3770,6 @@
 				46EB2E00003570 /* ZJKeychain.swift */,
 				46EB2E000088D0 /* Support Files */,
 			);
-			name = ZJKeychain;
 			path = ZJKeychain;
 			sourceTree = "<group>";
 		};
@@ -3808,7 +3780,6 @@
 				46EB2E00003590 /* ZJLocalizer.swift */,
 				46EB2E00008A90 /* Support Files */,
 			);
-			name = ZJLocalizable;
 			path = ZJLocalizable;
 			sourceTree = "<group>";
 		};
@@ -3818,7 +3789,6 @@
 				46EB2E000035A0 /* ZJRegion.swift */,
 				46EB2E00008C80 /* Support Files */,
 			);
-			name = ZJRegion;
 			path = ZJRegion;
 			sourceTree = "<group>";
 		};
@@ -3838,7 +3808,6 @@
 				46EB2E00003670 /* Core */,
 				46EB2E00008E60 /* Support Files */,
 			);
-			name = ZJRequest;
 			path = ZJRequest;
 			sourceTree = "<group>";
 		};
@@ -3850,7 +3819,6 @@
 				46EB2E000036A0 /* ZJPersonalRoutableTarget.swift */,
 				46EB2E00009170 /* Support Files */,
 			);
-			name = ZJRoutableTargets;
 			path = ZJRoutableTargets;
 			sourceTree = "<group>";
 		};
@@ -3864,7 +3832,6 @@
 				46EB2E000036F0 /* ZJRouter.swift */,
 				46EB2E00009370 /* Support Files */,
 			);
-			name = ZJRouter;
 			path = ZJRouter;
 			sourceTree = "<group>";
 		};
@@ -3876,7 +3843,6 @@
 				46EB2E00003780 /* Resources */,
 				46EB2E000095A0 /* Support Files */,
 			);
-			name = ZJValidator;
 			path = ZJValidator;
 			sourceTree = "<group>";
 		};
@@ -4199,7 +4165,6 @@
 				46EB2E00003380 /* View */,
 				46EB2E00003440 /* ViewModel */,
 			);
-			name = Home;
 			path = Home;
 			sourceTree = "<group>";
 		};
@@ -4208,7 +4173,6 @@
 			children = (
 				46EB2E00003340 /* HomeViewController.swift */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -4217,8 +4181,8 @@
 			children = (
 				46EB2E00003360 /* HomeItem.swift */,
 				46EB2E00003370 /* HomeLayoutModel.swift */,
+				D6F03C9B2A402C81001238AC /* HomeGuidingModel.swift */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -4233,7 +4197,6 @@
 				46EB2E000033C0 /* HomeItemView */,
 				46EB2E00003420 /* PlaceholderView */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -4242,7 +4205,6 @@
 			children = (
 				46EB2E000033A0 /* HomeRefreshableItemView.swift */,
 			);
-			name = Commom;
 			path = Commom;
 			sourceTree = "<group>";
 		};
@@ -4252,7 +4214,6 @@
 				46EB2E000033D0 /* ProcessGuidingView.swift */,
 				46EB2E000033E0 /* QuickEntryView.swift */,
 			);
-			name = HomeItemView;
 			path = HomeItemView;
 			sourceTree = "<group>";
 		};
@@ -4261,7 +4222,6 @@
 			children = (
 				46EB2E00003430 /* HomeItemPlaceholderView.swift */,
 			);
-			name = PlaceholderView;
 			path = PlaceholderView;
 			sourceTree = "<group>";
 		};
@@ -4270,7 +4230,6 @@
 			children = (
 				46EB2E00003450 /* HomeViewModel.swift */,
 			);
-			name = ViewModel;
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
@@ -4301,7 +4260,6 @@
 			children = (
 				46EB2E000034C0 /* Base */,
 			);
-			name = Components;
 			path = Components;
 			sourceTree = "<group>";
 		};
@@ -4311,7 +4269,6 @@
 				46EB2E000034D0 /* BaseView.swift */,
 				46EB2E000034E0 /* BaseViewController.swift */,
 			);
-			name = Base;
 			path = Base;
 			sourceTree = "<group>";
 		};
@@ -4323,7 +4280,6 @@
 				46EB2E00003520 /* Namespace.swift */,
 				46EB2E00003530 /* Request.swift */,
 			);
-			name = Service;
 			path = Service;
 			sourceTree = "<group>";
 		};
@@ -4332,7 +4288,6 @@
 			children = (
 				46EB2E00003550 /* TKBInfoCache.swift */,
 			);
-			name = Tools;
 			path = Tools;
 			sourceTree = "<group>";
 		};
@@ -6044,7 +5999,6 @@
 				7B6DC4944C4BC143CDA13855122AA46A /* ZJRegion-ZJRegion */,
 				A0377C64DAF9ABBACC16A79B41BCB7D3 /* ZJRequest */,
 				AAE22500BC2CD615C7A4E74F54F26383 /* ZJRequest-ZJRequest */,
-				AAE22500BC2CD615C7A4E74F54F26383 /* ZJRequest-ZJRequest */,
 				D0F03F9BA21701195DC87B60C863AD5A /* ZJRoutableTargets */,
 				0E2AAE8971B6BB33608009A183D6D8F5 /* ZJRoutableTargets-ZJRoutableTargets */,
 				3DF3942BDBA35FB0BE020625D27CF382 /* ZJRouter */,
@@ -6289,13 +6243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		46EB2E00008DC0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46EB2E00008E50 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -7270,6 +7217,7 @@
 				46EB2E000086F0 /* UIImage+Extension.swift in Sources */,
 				46EB2E00008700 /* UIStackView+Extension.swift in Sources */,
 				46EB2E00008810 /* ZJHome-dummy.m in Sources */,
+				D6F03C9C2A402C81001238AC /* HomeGuidingModel.swift in Sources */,
 				46EB2E00008780 /* ZJHomeModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -7339,13 +7287,6 @@
 				46EB2E00008F60 /* ZJRequestPrintPlugin.swift in Sources */,
 				46EB2E00008F70 /* ZJRequestResult.swift in Sources */,
 				46EB2E00008F80 /* ZJRequestTargetType.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46EB2E00008E30 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -8071,8 +8012,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -9916,38 +9856,6 @@
 			};
 			name = Debug;
 		};
-		46EB2E00008E00 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00008FD0 /* ZJRequest.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZJRequest";
-				IBSC_MODULE = ZJRequest;
-				INFOPLIST_FILE = "Target Support Files/ZJRequest/ResourceBundle-ZJRequest-ZJRequest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = ZJRequest;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		46EB2E00008E10 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00008FC0 /* ZJRequest.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZJRequest";
-				IBSC_MODULE = ZJRequest;
-				INFOPLIST_FILE = "Target Support Files/ZJRequest/ResourceBundle-ZJRequest-ZJRequest-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PRODUCT_NAME = ZJRequest;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		46EB2E00008EA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46EB2E00008FD0 /* ZJRequest.release.xcconfig */;
@@ -10641,15 +10549,6 @@
 			buildConfigurations = (
 				46EB2E00008D70 /* Debug */,
 				46EB2E00008D60 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		46EB2E00008DF0 /* Build configuration list for PBXNativeTarget "ZJRequest-ZJRequest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				46EB2E00008E10 /* Debug */,
-				46EB2E00008E00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -21,7 +21,14 @@ extension HomeScrollView {
                 }
             }
         case .guideProgress:
-            break
+            if let v: ProcessGuidingView = findSubview() {
+                if let m = model as? HomeItemState<[HomeGuidingModel]> {
+                    v.refresh(with: m)
+                } else if case AnyHomeItemState.empty = model {
+                    v.refreshWithEmptyState()
+//                    NotificationCenter.default.post(name: HomePopoverUtil.Notifications.taskGuide.name, object: false)
+                }
+            }
         case .noviceProducts:
             break
         case .recommendProducts:
