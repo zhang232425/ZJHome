@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeViewController: BaseViewController {
     
@@ -52,12 +53,20 @@ private extension HomeViewController {
     
     func bindViewModel() {
         
+        scrollView.rx.addPullToRefresh
+            .subscribeNext(weak: self, type(of: self).handlePull)
+            .disposed(by: disposeBag)
+        
+        Observable.merge(viewModel.homeBannerModel.map{_ in},
+                         viewModel.homeBannerError.map{_ in})
+        .bind(to: scrollView.rx.endPullToRefresh)
+        .disposed(by: disposeBag)
+        
         viewModel.layoutExecuting.subscribe(onNext: { [weak self] _ in
             self?.scrollView.setState(.loading)
         }).disposed(by: disposeBag)
         
         viewModel.homeLayoutModel.subscribe(onNext: { [weak self] model in
-            print("model.sections ===== \(model.sections)")
             self?.scrollView.setState(.layout(model.sections))
         }).disposed(by: disposeBag)
         
@@ -92,3 +101,10 @@ private extension HomeViewController {
     
 }
 
+private extension HomeViewController {
+    
+    func handlePull(_: Void) {
+        viewModel.requestLayout()
+    }
+    
+}
