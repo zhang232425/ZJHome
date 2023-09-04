@@ -12,6 +12,7 @@ extension HomeScrollView {
     func update(type: HomeItemType, model: HomeModelProtocol) {
         
         switch type {
+            
         case .quickEntry:
             if let v: QuickEntryView = findSubview() {
                 if let m = model as? HomeItemState<[HomeLayoutModel.QuickEntryModel]> {
@@ -20,25 +21,37 @@ extension HomeScrollView {
                     v.refreshWithEmptyState()
                 }
             }
+            
         case .guideProgress:
             if let v: ProcessGuidingView = findSubview() {
                 if let m = model as? HomeItemState<[HomeGuidingModel]> {
                     v.refresh(with: m)
                 } else if case AnyHomeItemState.empty = model {
                     v.refreshWithEmptyState()
-//                    NotificationCenter.default.post(name: HomePopoverUtil.Notifications.taskGuide.name, object: false)
                 }
             }
+            
         case .noviceProducts:
             break
+            
         case .recommendProducts:
             break
+            
         case .banner:
-            break
+            if let v: HomeBannerView = findSubview() {
+                if let m = model as? HomeItemState<[HomeBannerModel]> {
+                    v.refresh(with: m)
+                } else if case AnyHomeItemState.empty = model {
+                    v.refreshWithEmptyState()
+                }
+            }
+
         case .finance:
             break
+            
         case .infoDisclosure, .brandLogo:
             break
+            
         }
         
     }
@@ -66,7 +79,7 @@ extension HomeItemType {
         case .recommendProducts:
             return QuickEntryView.self
         case .banner:
-            return QuickEntryView.self
+            return HomeBannerView.self
         case .finance:
             return QuickEntryView.self
         case .infoDisclosure:

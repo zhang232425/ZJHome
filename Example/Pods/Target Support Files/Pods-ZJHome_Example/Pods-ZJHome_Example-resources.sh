@@ -97,6 +97,7 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJCommonView/ZJCommonView.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJHUD/ZJHUD.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJHome/ZJHome.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJRequest/ZJRequest.bundle"
@@ -104,6 +105,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJRouter/ZJRouter.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJCommonView/ZJCommonView.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJHUD/ZJHUD.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJHome/ZJHome.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/ZJRequest/ZJRequest.bundle"

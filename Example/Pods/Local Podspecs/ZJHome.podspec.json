@@ -43,6 +43,9 @@
     "SnapKit": [
 
     ],
+    "SDCycleScrollView": [
+
+    ],
     "ZJRequest": [
 
     ],
@@ -65,6 +68,9 @@
 
     ],
     "ZJHUD": [
+
+    ],
+    "ZJCommonView": [
 
     ]
   }

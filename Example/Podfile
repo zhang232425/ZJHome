@@ -12,5 +12,6 @@ target 'ZJHome_Example' do
   pod 'ZJRoutableTargets',   :git => 'git@github.com:zhang232425/ZJRoutableTargets.git', :branch => 'main'
   pod 'ZJBase',              :git => 'git@github.com:zhang232425/ZJBase.git', :branch => 'main'
   pod 'ZJExtension',         :git => 'git@github.com:zhang232425/ZJExtension.git', :branch => 'main'
+  pod 'ZJCommonView',        :git => 'git@github.com:zhang232425/ZJCommonView.git', :branch => 'main'
 
 end

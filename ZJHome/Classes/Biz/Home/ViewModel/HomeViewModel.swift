@@ -26,9 +26,16 @@ final class HomeViewModel {
     
     private var layoutModel: HomeLayoutModel?
     
+    /// 首页布局
     private var layoutAction: Action<(), HomeLayoutModel>!
     
+    /// 引导步骤
     private var guideAction: Action<(), [HomeGuidingModel]>!
+    
+    /// banner数据
+    private var bannerAction: Action<(), [HomeBannerModel]>!
+    
+    private let disposeBag = DisposeBag()
 
     init() {
         setupActions()
@@ -37,15 +44,31 @@ final class HomeViewModel {
     
 }
 
+private var bannerAction: Action<(), [HomeBannerModel]>!
+
 private extension HomeViewModel {
     
     func setupActions() {
+        
+        /// 首页布局
         layoutAction = .init(workFactory: {
             Request.homeLayout().delay(.milliseconds(200), scheduler: MainScheduler.instance)
         })
+        
+        /// 引导步骤
+        guideAction = .init(workFactory: { Request.guideProgresses() })
+        
+        /// banner数据
+        bannerAction = .init(workFactory: { Request.bannerList() })
+        
     }
     
     func bindData() {
+        
+        homeLayoutModel.subscribe(onNext: { [weak self] in
+            self?.layoutModel = $0
+            self?.requestItmesData()
+        }).disposed(by: disposeBag)
         
     }
     
@@ -55,6 +78,17 @@ extension HomeViewModel {
     
     func requestLayout() {
         layoutAction.execute()
+    }
+    
+}
+
+private extension HomeViewModel {
+    
+    func requestItmesData() {
+        
+        guideAction.execute()
+        bannerAction.execute()
+        
     }
     
 }
@@ -75,8 +109,13 @@ extension HomeViewModel {
             .filter { $0 == true }
     }
     
+    /// 引导步骤
+    var homeGuidingModel: Observable<[HomeGuidingModel]> { guideAction.elements }
+    var homeGuidingError: Observable<Error> { guideAction.underlyingError }
     
-    
+    /// banner数据
+    var homeBannerModel: Observable<[HomeBannerModel]> { bannerAction.elements }
+    var homeBannerError: Observable<Error> { bannerAction.underlyingError }
     
 }
 

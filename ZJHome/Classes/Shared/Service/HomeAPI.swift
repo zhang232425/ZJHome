@@ -16,6 +16,12 @@ enum HomeAPI {
     /// KTB信息
     case ktbInfo
     
+    /// 引导步骤
+    case guideProgress
+    
+    /// Banner
+    case banner
+    
 }
 
 extension HomeAPI: ZJRequestTargetType {
@@ -26,6 +32,10 @@ extension HomeAPI: ZJRequestTargetType {
             return "/homepage/getHomePageModule"
         case .ktbInfo:
             return "/tips/repayment/rate"
+        case .guideProgress:
+            return "/user/task/overviewList"
+        case .banner:
+            return "/activity/activity/list/version/app"
         }
     }
     
@@ -34,6 +44,10 @@ extension HomeAPI: ZJRequestTargetType {
         case .homeLayout:
             return .get
         case .ktbInfo:
+            return .get
+        case .guideProgress:
+            return .get
+        case .banner:
             return .get
         }
     }
@@ -44,12 +58,16 @@ extension HomeAPI: ZJRequestTargetType {
             return .requestPlain
         case .ktbInfo:
             return .requestPlain
+        case .guideProgress:
+            return .requestPlain
+        case .banner:
+            return .requestPlain
         }
     }
     
     var sampleData: Data { ".".data(using: .utf8)! }
     var headers: [String : String]? { nil }
-    var baseURL: URL { URL(string: "https://test-app.pintarplatformdigital.com/api/app")! }
+    var baseURL: URL { URL(string: "https://test-app.asetku.com/api/app")! }
     var timeoutInterval: TimeInterval { return 10 }
     
 }

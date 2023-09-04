@@ -57,6 +57,7 @@ private extension HomeViewController {
         }).disposed(by: disposeBag)
         
         viewModel.homeLayoutModel.subscribe(onNext: { [weak self] model in
+            print("model.sections ===== \(model.sections)")
             self?.scrollView.setState(.layout(model.sections))
         }).disposed(by: disposeBag)
         
@@ -69,6 +70,25 @@ private extension HomeViewController {
             self?.scrollView.setState(.failure)
         }).disposed(by: disposeBag)
         
+        
+        viewModel.homeGuidingModel.subscribe(onNext: { [weak self] in
+            self?.scrollView.update(type: .guideProgress, model: HomeItemState(data: $0))
+        }).disposed(by: disposeBag)
+        
+        viewModel.homeGuidingError.subscribe(onNext: { [weak self] _ in
+            self?.scrollView.update(type: .guideProgress, model: AnyHomeItemState.empty)
+        }).disposed(by: disposeBag)
+        
+        
+        viewModel.homeBannerModel.subscribe(onNext: { [weak self] in
+            self?.scrollView.update(type: .banner, model: HomeItemState(data: $0))
+        }).disposed(by: disposeBag)
+        
+        viewModel.homeBannerError.subscribe(onNext: { [weak self] _ in
+            self?.scrollView.update(type: .banner, model: AnyHomeItemState.empty)
+        }).disposed(by: disposeBag)
+        
     }
     
 }
+

@@ -19,6 +19,9 @@ enum Locale: String {
     case login
     case noSignal
     case refresh
+    
+    case guideHeaderName
+    
 }
 
 extension Locale: ZJLocalizable {

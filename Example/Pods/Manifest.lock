@@ -34,15 +34,18 @@ PODS:
   - RxSwiftExt/RxCocoa (6.0.1):
     - RxCocoa (~> 6.0)
     - RxSwiftExt/Core
-  - SDWebImage (5.16.0):
-    - SDWebImage/Core (= 5.16.0)
-  - SDWebImage/Core (5.16.0)
+  - SDCycleScrollView (1.82):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.17.0):
+    - SDWebImage/Core (= 5.17.0)
+  - SDWebImage/Core (5.17.0)
   - SnapKit (5.6.0)
   - SwiftyJSON (5.0.1)
   - Then (3.0.0)
   - ZJBase (0.1.0):
     - RTRootNavigationController
     - ZJExtension
+  - ZJCommonView (0.1.0)
   - ZJDevice (0.1.0):
     - DeviceKit
     - ZJKeychain
@@ -54,9 +57,11 @@ PODS:
     - RxCocoa
     - RxSwift
     - RxSwiftExt
+    - SDCycleScrollView
     - SnapKit
     - Then
     - ZJBase
+    - ZJCommonView
     - ZJExtension
     - ZJHUD
     - ZJLocalizable
@@ -93,6 +98,7 @@ PODS:
 
 DEPENDENCIES:
   - "ZJBase (from `git@github.com:zhang232425/ZJBase.git`, branch `main`)"
+  - "ZJCommonView (from `git@github.com:zhang232425/ZJCommonView.git`, branch `main`)"
   - "ZJExtension (from `git@github.com:zhang232425/ZJExtension.git`, branch `main`)"
   - ZJHome (from `../`)
   - "ZJRoutableTargets (from `git@github.com:zhang232425/ZJRoutableTargets.git`, branch `main`)"
@@ -121,6 +127,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxSwiftExt
+    - SDCycleScrollView
     - SDWebImage
     - SnapKit
     - SwiftyJSON
@@ -130,6 +137,9 @@ EXTERNAL SOURCES:
   ZJBase:
     :branch: main
     :git: "git@github.com:zhang232425/ZJBase.git"
+  ZJCommonView:
+    :branch: main
+    :git: "git@github.com:zhang232425/ZJCommonView.git"
   ZJExtension:
     :branch: main
     :git: "git@github.com:zhang232425/ZJExtension.git"
@@ -143,8 +153,11 @@ CHECKOUT OPTIONS:
   ZJBase:
     :commit: 329656def2f609e6e892bf00919f196ec062ad1f
     :git: "git@github.com:zhang232425/ZJBase.git"
+  ZJCommonView:
+    :commit: 5006c5b7307f8f853a7b978061705c56267b3006
+    :git: "git@github.com:zhang232425/ZJCommonView.git"
   ZJExtension:
-    :commit: 35fbeb2875b17912fded6915b681b5b074cb9678
+    :commit: 381e72bcd9245e371925aaef08d7dadaf1822971
     :git: "git@github.com:zhang232425/ZJExtension.git"
   ZJRoutableTargets:
     :commit: 131fb3f5ac990e39e8b84c4699b5abc32d139158
@@ -164,14 +177,16 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxSwiftExt: d61c4b9b06e0a448041b1c659e0f1b5c5a035afc
-  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
+  SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
+  SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   ZJBase: a38dc134dca5ad2c40768bd37300e971c35f6214
+  ZJCommonView: e62b96fa97474a99971531e70e5e90c749d90629
   ZJDevice: bfc36b209a264aa5b877a733c6a7cffa856038db
   ZJExtension: 696a53ccf69ba7171693e4c370d2672a62a4dfd9
-  ZJHome: 8524406001f5590cdf241933b2c4f16eda28c71c
+  ZJHome: 1c807e0d24ec380b547703fe68b9de3211e86f25
   ZJHUD: d5ca2144a62af4331f7f58386f5e4fbc5f5b2d01
   ZJKeychain: 056dd2cf24a6d44cb41677290742fe46cac94d39
   ZJLocalizable: 3c925ba648064d1da4ddc70c29335d4029fc0445
@@ -181,6 +196,6 @@ SPEC CHECKSUMS:
   ZJRouter: 2ae914db45b7844d11cb186d4de4dff75a5085b9
   ZJValidator: f1f4767a1a433ca41d2f33e0207172aa48afe58e
 
-PODFILE CHECKSUM: 18add9258cd27ecc1259da00fbfc37c834559ff9
+PODFILE CHECKSUM: 882c64dad0a13d58edc5752e939d557a82f668bf
 
 COCOAPODS: 1.11.2

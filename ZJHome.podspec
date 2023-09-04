@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift'
   s.dependency 'RxSwiftExt'
   s.dependency 'SnapKit'
+  s.dependency 'SDCycleScrollView'
   
   s.dependency 'ZJRequest'
   s.dependency 'ZJLocalizable'
@@ -40,6 +41,7 @@ Pod::Spec.new do |s|
   s.dependency 'ZJExtension'
   s.dependency 'ZJValidator'
   s.dependency 'ZJHUD'
+  s.dependency 'ZJCommonView'
   
   
 end

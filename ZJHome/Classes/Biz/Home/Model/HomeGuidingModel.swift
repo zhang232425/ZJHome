@@ -74,6 +74,24 @@ extension Array where Element == HomeGuidingModel {
     }
 }
 
-
+extension HomeGuidingModel {
+    
+    var attributedTitle: NSAttributedString {
+        let attrStr = NSMutableAttributedString(string: title)
+        let fullRange = NSMakeRange(0, title.count)
+        attrStr.addAttribute(.foregroundColor, value: UIColor(hexString: "#333333"), range: fullRange)
+        attrStr.addAttribute(.font, value: UIFont.regular12, range: fullRange)
+        
+        for word in highlightWords {
+            let colorRange = attrStr.mutableString.range(of: word)
+            if colorRange.location != NSNotFound {
+                attrStr.addAttribute(.foregroundColor, value: UIColor(hexString: "#FF7D0F"), range: colorRange)
+                attrStr.addAttribute(.font, value: UIFont.bold14, range: colorRange)
+            }
+        }
+        return attrStr
+    }
+    
+}
 
 

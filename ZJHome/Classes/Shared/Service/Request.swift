@@ -23,6 +23,22 @@ extension Request {
             .map { $0.data ?? .init() }
     }
     
+    /// 引导步骤
+    static func guideProgresses() -> Single<[HomeGuidingModel]> {
+        HomeAPI.guideProgress.rx.request()
+            .ensureResponseStatus()
+            .mapObject(ZJRequestResult<HomeGuidingListModel>.self)
+            .map { $0.data?.taskList ?? [] }
+    }
+    
+    /// banner数据
+    static func bannerList() -> Single<[HomeBannerModel]> {
+        HomeAPI.banner.rx.request()
+            .ensureResponseStatus()
+            .mapObject(_ListModel<HomeBannerModel>.self)
+            .map { ($0.data?.content ?? []).sortedBy(\.order) }
+    }
+    
 }
 
 extension PrimitiveSequence where Trait == SingleTrait, Element == Moya.Response {
@@ -57,3 +73,20 @@ extension Request {
     
 }
 
+import HandyJSON
+
+private typealias _ListModel<T> = ZJRequestResult<ModelsContainer<T>> // data.content 是`T`类型数组
+
+private struct ModelsContainer<T>: HandyJSON {
+    
+    var content = [T]()
+}
+
+private extension Array {
+    
+    func sortedBy(_ keypath: KeyPath<Element, Int>) -> Self {
+        return sorted { (e1, e2) -> Bool in
+            e1[keyPath: keypath] < e2[keyPath: keypath]
+        }
+    }
+}
