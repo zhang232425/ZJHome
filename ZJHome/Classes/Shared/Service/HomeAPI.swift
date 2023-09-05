@@ -7,6 +7,7 @@
 
 import Moya
 import ZJRequest
+import ZJCommonDefines
 
 enum HomeAPI {
     
@@ -67,7 +68,7 @@ extension HomeAPI: ZJRequestTargetType {
     
     var sampleData: Data { ".".data(using: .utf8)! }
     var headers: [String : String]? { nil }
-    var baseURL: URL { URL(string: "https://test-app.asetku.com/api/app")! }
+    var baseURL: URL { URL(string: "\(ZJUrl.server)/api/app")! }
     var timeoutInterval: TimeInterval { return 10 }
     
 }

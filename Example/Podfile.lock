@@ -46,6 +46,7 @@ PODS:
   - ZJBase (0.1.0):
     - RTRootNavigationController
     - ZJExtension
+  - ZJCommonDefines (0.1.0)
   - ZJCommonView (0.1.0)
   - ZJDevice (0.1.0):
     - DeviceKit
@@ -62,6 +63,7 @@ PODS:
     - SnapKit
     - Then
     - ZJBase
+    - ZJCommonDefines
     - ZJCommonView
     - ZJExtension
     - ZJHUD
@@ -102,6 +104,7 @@ PODS:
 
 DEPENDENCIES:
   - "ZJBase (from `git@github.com:zhang232425/ZJBase.git`, branch `main`)"
+  - "ZJCommonDefines (from `git@github.com:zhang232425/ZJCommonDefines.git`, branch `main`)"
   - "ZJCommonView (from `git@github.com:zhang232425/ZJCommonView.git`, branch `main`)"
   - "ZJExtension (from `git@github.com:zhang232425/ZJExtension.git`, branch `main`)"
   - ZJHome (from `../`)
@@ -143,6 +146,9 @@ EXTERNAL SOURCES:
   ZJBase:
     :branch: main
     :git: "git@github.com:zhang232425/ZJBase.git"
+  ZJCommonDefines:
+    :branch: main
+    :git: "git@github.com:zhang232425/ZJCommonDefines.git"
   ZJCommonView:
     :branch: main
     :git: "git@github.com:zhang232425/ZJCommonView.git"
@@ -162,6 +168,9 @@ CHECKOUT OPTIONS:
   ZJBase:
     :commit: 329656def2f609e6e892bf00919f196ec062ad1f
     :git: "git@github.com:zhang232425/ZJBase.git"
+  ZJCommonDefines:
+    :commit: 4d9ba68728ed9fb171e7e72825ad8a67d12b34c4
+    :git: "git@github.com:zhang232425/ZJCommonDefines.git"
   ZJCommonView:
     :commit: 5006c5b7307f8f853a7b978061705c56267b3006
     :git: "git@github.com:zhang232425/ZJCommonView.git"
@@ -196,10 +205,11 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   ZJBase: a38dc134dca5ad2c40768bd37300e971c35f6214
+  ZJCommonDefines: 9fd1e19aafb99bc9014e54e665520bb95aa5a22c
   ZJCommonView: e62b96fa97474a99971531e70e5e90c749d90629
   ZJDevice: bfc36b209a264aa5b877a733c6a7cffa856038db
   ZJExtension: 696a53ccf69ba7171693e4c370d2672a62a4dfd9
-  ZJHome: d3dda5b3d723348c0cb0a495968e2d9b7c3826a3
+  ZJHome: 9bb199f25fbc7e2767d3be7057a8526687becf3b
   ZJHUD: d5ca2144a62af4331f7f58386f5e4fbc5f5b2d01
   ZJKeychain: 056dd2cf24a6d44cb41677290742fe46cac94d39
   ZJLocalizable: 3c925ba648064d1da4ddc70c29335d4029fc0445
@@ -210,6 +220,6 @@ SPEC CHECKSUMS:
   ZJRouter: 2ae914db45b7844d11cb186d4de4dff75a5085b9
   ZJValidator: f1f4767a1a433ca41d2f33e0207172aa48afe58e
 
-PODFILE CHECKSUM: c8e046c84b59617edda0f722336208c196b4cbbf
+PODFILE CHECKSUM: e02815dfd3c25e58fee961dda03b4d9a442e572c
 
 COCOAPODS: 1.11.2

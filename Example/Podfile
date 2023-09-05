@@ -14,5 +14,6 @@ target 'ZJHome_Example' do
   pod 'ZJExtension',         :git => 'git@github.com:zhang232425/ZJExtension.git', :branch => 'main'
   pod 'ZJCommonView',        :git => 'git@github.com:zhang232425/ZJCommonView.git', :branch => 'main'
   pod 'ZJRefresh',           :git => 'git@github.com:zhang232425/ZJRefresh.git', :branch => 'main'
+  pod 'ZJCommonDefines',     :git => 'git@github.com:zhang232425/ZJCommonDefines.git', :branch => 'main'
 
 end

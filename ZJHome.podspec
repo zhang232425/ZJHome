@@ -43,6 +43,7 @@ Pod::Spec.new do |s|
   s.dependency 'ZJHUD'
   s.dependency 'ZJCommonView'
   s.dependency 'ZJRefresh'
+  s.dependency 'ZJCommonDefines'
   
   
 end
