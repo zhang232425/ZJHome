@@ -133,3 +133,11 @@ extension HomeScrollView {
     }
     
 }
+
+extension HomeScrollView {
+    
+    static var sharedItemTopMargin: CGFloat { 16 }
+    
+    static var sharedItemBottomMargin: CGFloat { 12 }
+    
+}

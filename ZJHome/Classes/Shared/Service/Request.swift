@@ -31,6 +31,20 @@ extension Request {
             .map { $0.data?.taskList ?? [] }
     }
     
+    /// 新手产品
+    static func noviceProductList() -> Single<HomeProductsModel> {
+        HomeAPI.noviceProducts.rx.request()
+            .ensureResponseStatus()
+            .mapObject(HomeProductsModel.self, path: "data")
+    }
+    
+    /// 推荐产品
+    static func recommendProductList() -> Single<HomeProductsModel> {
+        HomeAPI.recommendProducts.rx.request()
+            .ensureResponseStatus()
+            .mapObject(HomeProductsModel.self, path: "data")
+    }
+    
     /// banner数据
     static func bannerList() -> Single<[HomeBannerModel]> {
         HomeAPI.banner.rx.request()

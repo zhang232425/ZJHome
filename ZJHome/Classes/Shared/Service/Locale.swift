@@ -22,6 +22,20 @@ enum Locale: String {
     
     case guideHeaderName
     
+    case productCellRemainPrefix
+    
+    case productPeriodUnitDay
+    
+    case productPeriodUnitMonth
+    
+    case homeSectionNameRecommendP2P
+    
+    case viewMore
+    
+    case homeSectionNameRecommendInsurance
+    
+    case insureAmountPrefix
+    
 }
 
 extension Locale: ZJLocalizable {

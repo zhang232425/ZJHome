@@ -46,6 +46,9 @@
     "SDCycleScrollView": [
 
     ],
+    "SwiftDate": [
+
+    ],
     "ZJRequest": [
 
     ],
@@ -77,6 +80,9 @@
 
     ],
     "ZJCommonDefines": [
+
+    ],
+    "ZJLoginManager": [
 
     ]
   }

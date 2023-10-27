@@ -88,6 +88,21 @@ private extension HomeViewController {
             self?.scrollView.update(type: .guideProgress, model: AnyHomeItemState.empty)
         }).disposed(by: disposeBag)
         
+        viewModel.recommendProductsModel.subscribe(onNext: {
+            self.scrollView.update(type: .recommendProducts, model: HomeItemState(data: $0))
+        }).disposed(by: disposeBag)
+        
+        viewModel.recommendProductsError.subscribe(onNext: { [weak self] _ in
+            self?.scrollView.update(type: .recommendProducts, model: AnyHomeItemState.empty)
+        }).disposed(by: disposeBag)
+        
+        viewModel.noviceProductsModel.subscribe(onNext: { [weak self] in
+            self?.scrollView.update(type: .noviceProducts, model: HomeItemState(data: $0))
+        }).disposed(by: disposeBag)
+        
+        viewModel.noviceProductsError.subscribe(onNext: { [weak self] _ in
+            self?.scrollView.update(type: .noviceProducts, model: AnyHomeItemState.empty)
+        }).disposed(by: disposeBag)
         
         viewModel.homeBannerModel.subscribe(onNext: { [weak self] in
             self?.scrollView.update(type: .banner, model: HomeItemState(data: $0))

@@ -20,6 +20,12 @@ enum HomeAPI {
     /// 引导步骤
     case guideProgress
     
+    /// 新手产品
+    case noviceProducts
+    
+    /// 推荐产品
+    case recommendProducts
+    
     /// Banner
     case banner
     
@@ -35,6 +41,10 @@ extension HomeAPI: ZJRequestTargetType {
             return "/tips/repayment/rate"
         case .guideProgress:
             return "/user/task/overviewList"
+        case .noviceProducts:
+            return "/biz/product/getNewUserProductList"
+        case .recommendProducts:
+            return "/biz/product/getHomeProductList"
         case .banner:
             return "/activity/activity/list/version/app"
         }
@@ -47,6 +57,10 @@ extension HomeAPI: ZJRequestTargetType {
         case .ktbInfo:
             return .get
         case .guideProgress:
+            return .get
+        case .noviceProducts:
+            return .get
+        case .recommendProducts:
             return .get
         case .banner:
             return .get
@@ -61,6 +75,10 @@ extension HomeAPI: ZJRequestTargetType {
             return .requestPlain
         case .guideProgress:
             return .requestPlain
+        case .noviceProducts:
+            return .requestParameters(parameters: ["source": 1], encoding: URLEncoding.default)
+        case .recommendProducts:
+            return .requestParameters(parameters: ["source": 1], encoding: URLEncoding.default)
         case .banner:
             return .requestPlain
         }

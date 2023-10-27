@@ -32,6 +32,12 @@ final class HomeViewModel {
     /// 引导步骤
     private var guideAction: Action<(), [HomeGuidingModel]>!
     
+    /// 新手产品
+    private var noviceProductsAction: Action<(), HomeProductsModel>!
+    
+    /// 推荐产品
+    private var recommendProductsAction: Action<(), HomeProductsModel>!
+    
     /// banner数据
     private var bannerAction: Action<(), [HomeBannerModel]>!
     
@@ -57,6 +63,12 @@ private extension HomeViewModel {
         
         /// 引导步骤
         guideAction = .init(workFactory: { Request.guideProgresses() })
+        
+        /// 新手产品
+        noviceProductsAction = .init(workFactory: { Request.noviceProductList() })
+                
+        /// 推荐产品
+        recommendProductsAction = .init(workFactory: { Request.recommendProductList() })
         
         /// banner数据
         bannerAction = .init(workFactory: { Request.bannerList() })
@@ -87,6 +99,8 @@ private extension HomeViewModel {
     func requestItmesData() {
         
         guideAction.execute()
+        noviceProductsAction.execute()
+        recommendProductsAction.execute()
         bannerAction.execute()
         
     }
@@ -112,6 +126,14 @@ extension HomeViewModel {
     /// 引导步骤
     var homeGuidingModel: Observable<[HomeGuidingModel]> { guideAction.elements }
     var homeGuidingError: Observable<Error> { guideAction.underlyingError }
+    
+    /// 新手产品
+    var noviceProductsModel: Observable<HomeProductsModel> { noviceProductsAction.elements }
+    var noviceProductsError: Observable<Error> { noviceProductsAction.underlyingError }
+    
+    /// 推荐产品
+    var recommendProductsModel: Observable<HomeProductsModel> { recommendProductsAction.elements }
+    var recommendProductsError: Observable<Error> { recommendProductsAction.underlyingError }
     
     /// banner数据
     var homeBannerModel: Observable<[HomeBannerModel]> { bannerAction.elements }

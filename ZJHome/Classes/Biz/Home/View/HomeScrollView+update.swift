@@ -14,6 +14,7 @@ extension HomeScrollView {
         switch type {
             
         case .quickEntry:
+            
             if let v: QuickEntryView = findSubview() {
                 if let m = model as? HomeItemState<[HomeLayoutModel.QuickEntryModel]> {
                     v.refresh(with: m)
@@ -23,6 +24,7 @@ extension HomeScrollView {
             }
             
         case .guideProgress:
+            
             if let v: ProcessGuidingView = findSubview() {
                 if let m = model as? HomeItemState<[HomeGuidingModel]> {
                     v.refresh(with: m)
@@ -32,12 +34,30 @@ extension HomeScrollView {
             }
             
         case .noviceProducts:
-            break
+            
+            if let v: NoviceProductContainerView = findSubview() {
+                if let m = model as? HomeItemState<HomeProductsModel> {
+                    v.refresh(with: m)
+                } else if case AnyHomeItemState.empty = model {
+                    v.refreshWithEmptyState()
+                }
+                
+            }
+            
             
         case .recommendProducts:
-            break
+            
+            if let v: RecommendProductContainerView = findSubview() {
+                if let m = model as? HomeItemState<HomeProductsModel> {
+                    v.refresh(with: m)
+                } else if case AnyHomeItemState.empty = model {
+                    v.refreshWithEmptyState()
+                }
+            }
+            
             
         case .banner:
+            
             if let v: HomeBannerView = findSubview() {
                 if let m = model as? HomeItemState<[HomeBannerModel]> {
                     v.refresh(with: m)
@@ -47,9 +67,11 @@ extension HomeScrollView {
             }
 
         case .finance:
+            
             break
             
         case .infoDisclosure, .brandLogo:
+            
             break
             
         }
@@ -75,9 +97,9 @@ extension HomeItemType {
         case .guideProgress:
             return ProcessGuidingView.self
         case .noviceProducts:
-            return QuickEntryView.self
+            return NoviceProductContainerView.self
         case .recommendProducts:
-            return QuickEntryView.self
+            return RecommendProductContainerView.self
         case .banner:
             return HomeBannerView.self
         case .finance:

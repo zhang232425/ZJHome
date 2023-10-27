@@ -41,6 +41,7 @@ PODS:
     - SDWebImage/Core (= 5.17.0)
   - SDWebImage/Core (5.17.0)
   - SnapKit (5.6.0)
+  - SwiftDate (6.3.1)
   - SwiftyJSON (5.0.1)
   - Then (3.0.0)
   - ZJBase (0.1.0):
@@ -61,6 +62,7 @@ PODS:
     - RxSwiftExt
     - SDCycleScrollView
     - SnapKit
+    - SwiftDate
     - Then
     - ZJBase
     - ZJCommonDefines
@@ -68,6 +70,7 @@ PODS:
     - ZJExtension
     - ZJHUD
     - ZJLocalizable
+    - ZJLoginManager
     - ZJRefresh
     - ZJRequest
     - ZJRoutableTargets
@@ -80,6 +83,10 @@ PODS:
   - ZJKeychain (0.1.0):
     - KeychainSwift
   - ZJLocalizable (0.1.0)
+  - ZJLoginManager (0.1.0):
+    - ZJCommonDefines
+    - ZJKeychain
+    - ZJRequest
   - ZJRefresh (0.1.0):
     - ESPullToRefresh
   - ZJRegion (0.1.0)
@@ -108,6 +115,7 @@ DEPENDENCIES:
   - "ZJCommonView (from `git@github.com:zhang232425/ZJCommonView.git`, branch `main`)"
   - "ZJExtension (from `git@github.com:zhang232425/ZJExtension.git`, branch `main`)"
   - ZJHome (from `../`)
+  - "ZJLoginManager (from `git@github.com:zhang232425/ZJLoginManager.git`, branch `main`)"
   - "ZJRefresh (from `git@github.com:zhang232425/ZJRefresh.git`, branch `main`)"
   - "ZJRoutableTargets (from `git@github.com:zhang232425/ZJRoutableTargets.git`, branch `main`)"
 
@@ -139,6 +147,7 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - SnapKit
+    - SwiftDate
     - SwiftyJSON
     - Then
 
@@ -157,6 +166,9 @@ EXTERNAL SOURCES:
     :git: "git@github.com:zhang232425/ZJExtension.git"
   ZJHome:
     :path: "../"
+  ZJLoginManager:
+    :branch: main
+    :git: "git@github.com:zhang232425/ZJLoginManager.git"
   ZJRefresh:
     :branch: main
     :git: "git@github.com:zhang232425/ZJRefresh.git"
@@ -172,11 +184,14 @@ CHECKOUT OPTIONS:
     :commit: 4d9ba68728ed9fb171e7e72825ad8a67d12b34c4
     :git: "git@github.com:zhang232425/ZJCommonDefines.git"
   ZJCommonView:
-    :commit: 5006c5b7307f8f853a7b978061705c56267b3006
+    :commit: a953c8c12bb0d7086d579eda2fa57c9cace4af7a
     :git: "git@github.com:zhang232425/ZJCommonView.git"
   ZJExtension:
     :commit: 381e72bcd9245e371925aaef08d7dadaf1822971
     :git: "git@github.com:zhang232425/ZJExtension.git"
+  ZJLoginManager:
+    :commit: 068da4b18e28d2e9231386c4c769ce42b9ba81c9
+    :git: "git@github.com:zhang232425/ZJLoginManager.git"
   ZJRefresh:
     :commit: d2855ff0b65e3142eb90a561827b7dd07fec044d
     :git: "git@github.com:zhang232425/ZJRefresh.git"
@@ -202,6 +217,7 @@ SPEC CHECKSUMS:
   SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
   SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   ZJBase: a38dc134dca5ad2c40768bd37300e971c35f6214
@@ -209,10 +225,11 @@ SPEC CHECKSUMS:
   ZJCommonView: e62b96fa97474a99971531e70e5e90c749d90629
   ZJDevice: bfc36b209a264aa5b877a733c6a7cffa856038db
   ZJExtension: 696a53ccf69ba7171693e4c370d2672a62a4dfd9
-  ZJHome: 9bb199f25fbc7e2767d3be7057a8526687becf3b
+  ZJHome: 7fa528bc9c01a18454d67fdc69863e68776020f0
   ZJHUD: d5ca2144a62af4331f7f58386f5e4fbc5f5b2d01
   ZJKeychain: 056dd2cf24a6d44cb41677290742fe46cac94d39
   ZJLocalizable: 3c925ba648064d1da4ddc70c29335d4029fc0445
+  ZJLoginManager: c1e2c054e53bf8ce282c5519209c354ecf176ab9
   ZJRefresh: 2ab367241aea892e43afa57498d07c47f4c38897
   ZJRegion: e077f30a1ebf32398f2e9af9380a7fe1ab4ffc61
   ZJRequest: cbca3f9b01504851babe3d409121abe1e9560f1b
@@ -220,6 +237,6 @@ SPEC CHECKSUMS:
   ZJRouter: 2ae914db45b7844d11cb186d4de4dff75a5085b9
   ZJValidator: f1f4767a1a433ca41d2f33e0207172aa48afe58e
 
-PODFILE CHECKSUM: e02815dfd3c25e58fee961dda03b4d9a442e572c
+PODFILE CHECKSUM: df323c6cf03250f1698a364a667b593d9ec144ab
 
 COCOAPODS: 1.11.2
