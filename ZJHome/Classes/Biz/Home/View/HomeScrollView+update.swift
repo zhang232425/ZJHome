@@ -68,7 +68,10 @@ extension HomeScrollView {
 
         case .finance:
             
-            break
+            if let v: FinanceView = findSubview(),
+               let m = model as? HomeItemState<FinanceItemData> {
+                v.refresh(with: m)
+            }
             
         case .infoDisclosure, .brandLogo:
             
@@ -103,11 +106,11 @@ extension HomeItemType {
         case .banner:
             return HomeBannerView.self
         case .finance:
-            return QuickEntryView.self
+            return FinanceView.self
         case .infoDisclosure:
-            return QuickEntryView.self
+            return InfoDisclosureView.self
         case .brandLogo:
-            return QuickEntryView.self
+            return HomeFooterView.self
         }
     }
     

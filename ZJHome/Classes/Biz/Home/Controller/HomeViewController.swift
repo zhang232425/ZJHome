@@ -14,6 +14,8 @@ class HomeViewController: BaseViewController {
     private let viewModel = HomeViewModel()
     
     // MARK: - Lazy Load
+    private(set) lazy var videoPlayer = HomeVideoPlayer()
+    
     private lazy var titleView = HomeNavigationBarView()
     
     private lazy var scrollView = HomeScrollView().then {
@@ -110,6 +112,26 @@ private extension HomeViewController {
         
         viewModel.homeBannerError.subscribe(onNext: { [weak self] _ in
             self?.scrollView.update(type: .banner, model: AnyHomeItemState.empty)
+        }).disposed(by: disposeBag)
+        
+        viewModel.financeBriefModel.subscribe(onNext: { [weak self] in
+            let data = FinanceItemData.brief(htmls: $0)
+            self?.scrollView.update(type: .finance, model: HomeItemState(data: data))
+        }).disposed(by: disposeBag)
+        
+        viewModel.financeBriefError.subscribe(onNext: { [weak self] _ in
+            let data = FinanceItemData.briefError
+            self?.scrollView.update(type: .finance, model: HomeItemState(data: data))
+        }).disposed(by: disposeBag)
+        
+        viewModel.financeCourseModel.subscribe(onNext: { [weak self] in
+            let data = FinanceItemData.course($0)
+            self?.scrollView.update(type: .finance, model: HomeItemState(data: data))
+        }).disposed(by: disposeBag)
+    
+        viewModel.financeCourseError.subscribe(onNext: { [weak self] _ in
+            let data = FinanceItemData.courseError
+            self?.scrollView.update(type: .finance, model: HomeItemState(data: data))
         }).disposed(by: disposeBag)
         
     }

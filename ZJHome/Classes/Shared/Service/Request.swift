@@ -53,6 +53,38 @@ extension Request {
             .map { ($0.data?.content ?? []).sortedBy(\.order) }
     }
     
+    /// 待支付订单
+    static func unpaidCountNotice() -> Single<HomeUnpaidConfigModel> {
+        
+        HomeAPI.unpaidCount.rx.request()
+            .ensureResponseStatus()
+            .mapObject(ZJRequestResult<HomeUnpaidConfigModel>.self)
+            .map { $0.data ?? .init() }
+        
+    }
+    
+    /// 首页财经快讯
+    static func homeFinanceBrief() -> Single<[String]> {
+        
+        HomeAPI.financeBrief.rx.request()
+            .ensureResponseStatus()
+            .mapObject(ZJRequestResult<[FinanceBriefModel]>.self)
+            .map { ($0.data ?? []).map { $0.content } }
+        
+    }
+    
+    /// 首页理财学堂
+    static func homeFinanceCourse() -> Single<FinanceCourseModel> {
+        
+        HomeAPI.financeCourse.rx.request()
+            .ensureResponseStatus()
+            .mapObject(ZJRequestResult<FinanceCourseModel>.self)
+            .map { $0.data ?? .init() }
+        
+    }
+    
+    
+    
 }
 
 extension PrimitiveSequence where Trait == SingleTrait, Element == Moya.Response {

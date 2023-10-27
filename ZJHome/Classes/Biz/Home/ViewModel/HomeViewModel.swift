@@ -9,6 +9,7 @@ import Action
 import RxCocoa
 import RxSwift
 import ZJRequest
+import ZJLoginManager
 
 /*
 final class HomeViewModel {
@@ -40,6 +41,15 @@ final class HomeViewModel {
     
     /// banner数据
     private var bannerAction: Action<(), [HomeBannerModel]>!
+    
+    /// 待支付订单
+    private var unpaidNoticeAction: Action<(), HomeUnpaidConfigModel>!
+    
+    /// 首页财经快讯
+    private var financeBriefAction: Action<(), [String]>!
+    
+    /// 首页理财学堂
+    private var financeCourseAction: Action<(), FinanceCourseModel>!
     
     private let disposeBag = DisposeBag()
 
@@ -73,6 +83,15 @@ private extension HomeViewModel {
         /// banner数据
         bannerAction = .init(workFactory: { Request.bannerList() })
         
+        /// 待支付订单
+        unpaidNoticeAction = .init(workFactory: { Request.unpaidCountNotice() })
+        
+        /// 首页财经快讯
+        financeBriefAction = .init(workFactory: { Request.homeFinanceBrief() })
+        
+        /// 首页理财学堂
+        financeCourseAction = .init(workFactory: { Request.homeFinanceCourse() })
+        
     }
     
     func bindData() {
@@ -92,6 +111,12 @@ extension HomeViewModel {
         layoutAction.execute()
     }
     
+    func requestUnpaidNotice() {
+        if ZJLoginManager.shared.isLogin {
+            unpaidNoticeAction.execute()
+        }
+    }
+    
 }
 
 private extension HomeViewModel {
@@ -102,6 +127,8 @@ private extension HomeViewModel {
         noviceProductsAction.execute()
         recommendProductsAction.execute()
         bannerAction.execute()
+        financeBriefAction.execute()
+        financeCourseAction.execute()
         
     }
     
@@ -138,6 +165,17 @@ extension HomeViewModel {
     /// banner数据
     var homeBannerModel: Observable<[HomeBannerModel]> { bannerAction.elements }
     var homeBannerError: Observable<Error> { bannerAction.underlyingError }
+    
+    /// 待支付定单数据
+    var unpaidNoticeModel: Observable<HomeUnpaidConfigModel> { unpaidNoticeAction.elements }
+    
+    /// 首页财经快讯
+    var financeBriefModel: Observable<[String]> { financeBriefAction.elements }
+    var financeBriefError: Observable<Error> { financeBriefAction.underlyingError }
+    
+    /// 首页理财学堂
+    var financeCourseModel: Observable<FinanceCourseModel> { financeCourseAction.elements }
+    var financeCourseError: Observable<Error> { financeCourseAction.underlyingError }
     
 }
 

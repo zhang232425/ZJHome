@@ -187,7 +187,7 @@ CHECKOUT OPTIONS:
     :commit: a953c8c12bb0d7086d579eda2fa57c9cace4af7a
     :git: "git@github.com:zhang232425/ZJCommonView.git"
   ZJExtension:
-    :commit: 381e72bcd9245e371925aaef08d7dadaf1822971
+    :commit: 6d20ce67b858442ec5cbf537fc6e403b657bd052
     :git: "git@github.com:zhang232425/ZJExtension.git"
   ZJLoginManager:
     :commit: 068da4b18e28d2e9231386c4c769ce42b9ba81c9

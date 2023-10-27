@@ -29,6 +29,15 @@ enum HomeAPI {
     /// Banner
     case banner
     
+    /// 首页财经快讯
+    case financeBrief
+    
+    /// 首页理财学堂
+    case financeCourse
+    
+    /// 待支付的投资订单数量
+    case unpaidCount
+    
 }
 
 extension HomeAPI: ZJRequestTargetType {
@@ -47,6 +56,12 @@ extension HomeAPI: ZJRequestTargetType {
             return "/biz/product/getHomeProductList"
         case .banner:
             return "/activity/activity/list/version/app"
+        case .financeBrief:
+            return "/biz/finc/brief/homepage"
+        case .financeCourse:
+            return "/biz/finc/home/recommend"
+        case .unpaidCount:
+            return "/biz/asset/trade/unpaid/countV2"
         }
     }
     
@@ -64,6 +79,12 @@ extension HomeAPI: ZJRequestTargetType {
             return .get
         case .banner:
             return .get
+        case .financeBrief:
+            return .get
+        case .financeCourse:
+            return .get
+        case .unpaidCount:
+            return .get
         }
     }
     
@@ -80,6 +101,12 @@ extension HomeAPI: ZJRequestTargetType {
         case .recommendProducts:
             return .requestParameters(parameters: ["source": 1], encoding: URLEncoding.default)
         case .banner:
+            return .requestPlain
+        case .financeBrief:
+            return .requestParameters(parameters: ["size": 2], encoding: URLEncoding.default)
+        case .financeCourse:
+            return .requestPlain
+        case .unpaidCount:
             return .requestPlain
         }
     }

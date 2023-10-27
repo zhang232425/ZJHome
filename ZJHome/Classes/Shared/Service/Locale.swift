@@ -36,6 +36,16 @@ enum Locale: String {
     
     case insureAmountPrefix
     
+    case financeHotNews
+    
+    case homeFooterDisclaimer
+    
+    case homeInfoDisclosureText1
+    
+    case homeInfoDisclosureText2
+    
+    case homeInfoDisclosureText3
+        
 }
 
 extension Locale: ZJLocalizable {
